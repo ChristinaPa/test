@@ -1,0 +1,20 @@
+{
+	"name": "Select Direct Cosmos",
+	"properties": {
+		"folder": {
+			"name": "Demo7_Cosmos"
+		},
+		"content": {
+			"query": "SELECT TOP 100 *\nFROM OPENROWSET(​PROVIDER = 'CosmosDB',\n                CONNECTION = 'Account=cosmoscompass;Database=RetailSalesDemoDB',\n                OBJECT = 'StoreDemographics',\n                SERVER_CREDENTIAL = 'cosmoscompass'\n) AS [StoreDemographics]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

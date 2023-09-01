@@ -1,0 +1,20 @@
+{
+	"name": "01 CETAS Statement for a couple of tables",
+	"properties": {
+		"folder": {
+			"name": "Demo8_Archive"
+		},
+		"content": {
+			"query": "CREATE schema [arc]\nGO\n\nCREATE EXTERNAL TABLE [arc].[FactSaleNov2012]\nWITH\n(\n\tLOCATION = '/FactSaleNov2012',\n\tDATA_SOURCE = [datasourcename],\n\tFILE_FORMAT = [ParquetFile]\n)\nAS\nSELECT * FROM wwi.FactSale\nWHERE InvoiceDateKey BETWEEN '2012-11-01 00:00:00.000' AND '2012-12-01 00:00:00.000'\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "compassdedicated",
+				"poolName": "compassdedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

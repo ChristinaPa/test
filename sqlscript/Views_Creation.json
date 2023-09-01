@@ -1,0 +1,20 @@
+{
+	"name": "Views_Creation",
+	"properties": {
+		"folder": {
+			"name": "Demo7_Cosmos"
+		},
+		"content": {
+			"query": "--CREATE DATABASE RetailCosmosDB\n\n--CREATE VIEW StoreDemographics\n--AS\n--SELECT *\n--FROM OPENROWSET(​PROVIDER = 'CosmosDB',\n                --CONNECTION = 'Account=cosmoscompass;Database=RetailSalesDemoDB',\n                --OBJECT = 'StoreDemographics',\n                --SERVER_CREDENTIAL = 'cosmoscompass'\n--) AS [StoreDemographics]\n\n--CREATE VIEW RetailSales\n--AS \n--SELECT  *\n--FROM OPENROWSET (\n    --'CosmosDB', N'account=cosmoscompass;database=RetailSalesDemoDB;region=West Europe;key=bQphjXxF4Et15WIZT2yN51l47YupBQO7zIMAtYFsW0SBuWCkg24pQf2n6e55EF3OH6B6uANOAWZ8ACDbByZQow==',RetailSales)\n--AS q1\n\nCREATE VIEW Products\nAS\nSELECT *\nFROM OPENROWSET(​PROVIDER = 'CosmosDB',\n                CONNECTION = 'Account=cosmoscompass;Database=RetailSalesDemoDB',\n                OBJECT = 'Products',\n                SERVER_CREDENTIAL = 'cosmoscompass'\n) AS [Products]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "RetailCosmosDB",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

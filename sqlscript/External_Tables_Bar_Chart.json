@@ -1,0 +1,20 @@
+{
+	"name": "External_Tables_Bar_Chart",
+	"properties": {
+		"folder": {
+			"name": "Demo5_Analyzing_Data"
+		},
+		"content": {
+			"query": "--remember to run it from demo5 database\n\nSELECT TOP 10\n    StateProvince,\n    CAST(SUM(TotalIncludingTax) AS decimal(18,2)) AS [(sum) TotalIncludingTax],\n    CAST(AVG(TotalIncludingTax) AS decimal(18,2)) AS [(avg) TotalIncludingTax]\n  FROM Dim_City D\n  JOIN Fact_Order F on F.citykey = D.citykey\n GROUP BY   Description, StateProvince\n ORDER BY 3 DESC\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

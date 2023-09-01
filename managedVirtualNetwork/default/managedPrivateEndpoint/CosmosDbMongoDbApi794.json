@@ -1,0 +1,7 @@
+{
+	"name": "CosmosDbMongoDbApi794",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ac0fda21-dbed-4e24-9126-e7f33fb2458a/resourceGroups/Synapse_in_A_Day_Compass/providers/Microsoft.DocumentDB/databaseAccounts/cosmoscompass",
+		"groupId": "Analytical"
+	}
+}

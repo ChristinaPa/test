@@ -1,0 +1,20 @@
+{
+	"name": "Join_2_external_tables",
+	"properties": {
+		"folder": {
+			"name": "Demo5_Analyzing_Data"
+		},
+		"content": {
+			"query": "--remember to run it from demo5 database\n\nSELECT\n    OrderDateKey, Description as Product, City,\n    CAST(SUM(TotalIncludingTax) AS decimal(18,2)) AS [(sum) TotalIncludingTax],\n    CAST(AVG(TotalIncludingTax) AS decimal(18,2)) AS [(avg) TotalIncludingTax],\n    SUM(Quantity) AS [(sum) Quantity]\n  FROM Dim_City D\n  JOIN Fac_Ord F on F.citykey = D.citykey\n GROUP BY OrderDateKey,  Description, City\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

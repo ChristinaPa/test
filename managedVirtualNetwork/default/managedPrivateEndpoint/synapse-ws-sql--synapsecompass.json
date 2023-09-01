@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-sql--synapsecompass",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ac0fda21-dbed-4e24-9126-e7f33fb2458a/resourceGroups/Synapse_in_A_Day_Compass/providers/Microsoft.Synapse/workspaces/synapsecompass",
+		"groupId": "sql",
+		"fqdns": [
+			"synapsecompass.1ea8348a-4ac5-4ce7-aaf4-054a2b86a1ae.sql.azuresynapse.net"
+		]
+	}
+}

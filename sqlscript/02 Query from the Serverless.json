@@ -1,0 +1,20 @@
+{
+	"name": "02 Query from the Serverless",
+	"properties": {
+		"folder": {
+			"name": "Demo8_Archive"
+		},
+		"content": {
+			"query": "-- Connect to the builtin Serverless SQLPool \n-- Verify you are in Master database \n-- Create a serverless database \n--CREATE DATABASE ServerlessSynapseinaday\n--GO \n\n-- Move to the new db created \n-- 00 CREATE A DATA SOURCE \n--###################################################################################################### \n-- Step 1: Create Database Scoped Credential (linked to Azure Blob Storage Account) \n--###################################################################################################### \nCREATE MASTER KEY \n-- Connect to the SQL Pool \n-- Create a database scoped credential \nCREATE DATABASE SCOPED CREDENTIAL credentialname \n\tWITH IDENTITY = 'SHARED ACCESS SIGNATURE', \n\tSECRET = 'YYN89Xn3+aWGtwBhU2ptYZDUFiMDlytQDJue449evzFlnCL60s/hyu0ZmOcadDUheDxg67v3Hxcq+ASt8+XHBA==' \n\t--Storage Access Key to be replaced with the Access key \n\n--###################################################################################################### \n-- Step 2: Create External Data Source (Link to a particular container of the Azure Blob Storage Account) \n--###################################################################################################### \n--SELECT * FROM sys.external_data_sources \n\n-- Connect to the SQL Pool \n-- CREATE EXTERNAL DATA SOURCE BlobDataSource with ( \n-- LOCATION = 'wasbs://archive@snapse1day.blob.core.windows.net', \n-- blobaccountname: replace w actual name \n-- CREDENTIAL = credentialname \n--This name must match the database scoped credential name \n-- ) \n--###################################################################################################### \n\n\n-- Step 3: Read the data from the blob previously data you did archive \n--###################################################################################################### \n\nSELECT TOP 1000 * FROM OPENROWSET( BULK 'https://storagecompass.dfs.core.windows.net/archive/FactSaleNov2012/**', FORMAT = 'PARQUET' ) AS r",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "ServerlessSynapseinaday",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
