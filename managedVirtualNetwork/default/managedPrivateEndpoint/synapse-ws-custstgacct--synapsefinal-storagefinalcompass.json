@@ -1,0 +1,10 @@
+{
+	"name": "synapse-ws-custstgacct--synapsefinal-storagefinalcompass",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ac0fda21-dbed-4e24-9126-e7f33fb2458a/resourceGroups/Synapse_In_A_Day_Final/providers/Microsoft.Storage/storageAccounts/storagefinalcompass",
+		"groupId": "dfs",
+		"fqdns": [
+			"storagefinalcompass.dfs.core.windows.net"
+		]
+	}
+}

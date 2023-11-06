@@ -1,0 +1,20 @@
+{
+	"name": "3_Create_Database",
+	"properties": {
+		"folder": {
+			"name": "Demo7_Cosmos"
+		},
+		"content": {
+			"query": "CREATE DATABASE RetailCosmosDB\n\n--DROP DATABASE RetailCosmosDB",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

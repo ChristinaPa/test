@@ -1,0 +1,20 @@
+{
+	"name": "Only Query Serverless",
+	"properties": {
+		"folder": {
+			"name": "Demo8_Archive"
+		},
+		"content": {
+			"query": "SELECT TOP 1000 * FROM OPENROWSET( BULK 'https://storagefinalcompass.dfs.core.windows.net/archive/FactSaleNov2012/**', FORMAT = 'PARQUET' ) AS r",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

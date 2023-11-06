@@ -1,0 +1,20 @@
+{
+	"name": "Create_Database_In_Serverless",
+	"properties": {
+		"folder": {
+			"name": "Demo6_Spark"
+		},
+		"content": {
+			"query": "CREATE DATABASE WWI COLLATE Latin1_General_100_BIN2_UTF8;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

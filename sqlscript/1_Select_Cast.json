@@ -1,0 +1,20 @@
+{
+	"name": "1_Select_Cast",
+	"properties": {
+		"folder": {
+			"name": "Demo5_Analyzing_Data"
+		},
+		"content": {
+			"query": "SELECT\n    OrderDateKey, StockItemKey, Description,\n    CAST(SUM(TotalIncludingTax) AS decimal(18,2)) AS [(sum) TotalIncludingTax],\n    CAST(AVG(TotalIncludingTax) AS decimal(18,2)) AS [(avg) TotalIncludingTax],\n    SUM(Quantity) AS [(sum) Quantity]\nFROM\n    OPENROWSET(\n        BULK 'https://storagefinalcompass.dfs.core.windows.net/raw/Fact/Order/Fact.Order.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n    GROUP BY OrderDateKey, StockItemKey, Description\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

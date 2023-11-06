@@ -1,0 +1,20 @@
+{
+	"name": "Query_The_View",
+	"properties": {
+		"folder": {
+			"name": "Demo7_Cosmos"
+		},
+		"content": {
+			"query": "SELECT * FROM RetailSales",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "RetailCosmosDB",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

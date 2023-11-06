@@ -1,0 +1,20 @@
+{
+	"name": "Demo6_RawDS_External_Data_Source",
+	"properties": {
+		"folder": {
+			"name": "Demo6_Spark"
+		},
+		"content": {
+			"query": "CREATE MASTER KEY ENCRYPTION BY PASSWORD= 'Leopard654!!';\n\n-- Create a Database Scoped Credential.\nCREATE DATABASE SCOPED CREDENTIAL AppCred WITH IDENTITY = 'Managed Identity'\n-- Create an EXERNAL DATA Source.\nCREATE EXTERNAL DATA SOURCE RawDS\nWITH (\nLOCATION = 'https://storagefinalcompass.dfs.core.windows.net',\nCREDENTIAL = [AppCred]\n)\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "WWI",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

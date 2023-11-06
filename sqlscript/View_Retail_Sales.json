@@ -1,0 +1,20 @@
+{
+	"name": "View_Retail_Sales",
+	"properties": {
+		"folder": {
+			"name": "Demo7_Cosmos"
+		},
+		"content": {
+			"query": "--Run it from RetailCosmosDB Database\n\nCREATE VIEW RetailSales\nAS \nSELECT  *\nFROM OPENROWSET (\n    'CosmosDB', N'account=cosmoscompass;database=RetailSalesDemoDB;region=West Europe;key=bQphjXxF4Et15WIZT2yN51l47YupBQO7zIMAtYFsW0SBuWCkg24pQf2n6e55EF3OH6B6uANOAWZ8ACDbByZQow==',RetailSales)\nAS q1",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "RetailCosmosDB",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

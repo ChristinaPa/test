@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParquetFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] \n\tWITH ( FORMAT_TYPE = PARQUET)\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'raw_storagefinalcompass_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [raw_storagefinalcompass_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://raw@storagefinalcompass.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE dbo.Dimension_City (\n\t[CityKey] int,\n\t[WWICityID] int,\n\t[City] nvarchar(4000),\n\t[StateProvince] nvarchar(4000),\n\t[Country] nvarchar(4000),\n\t[Continent] nvarchar(4000),\n\t[SalesTerritory] nvarchar(4000),\n\t[Region] nvarchar(4000),\n\t[Subregion] nvarchar(4000),\n\t[LatestRecordedPopulation] bigint,\n\t[ValidFrom] datetime2(7),\n\t[ValidTo] datetime2(7),\n\t[LineageKey] int\n\t)\n\tWITH (\n\tLOCATION = 'Dimension/City/Dimension.City.parquet',\n\tDATA_SOURCE = [raw_storagefinalcompass_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.Dimension_City\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "demo5",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
