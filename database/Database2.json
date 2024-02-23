@@ -1,0 +1,26 @@
+{
+	"name": "Database2",
+	"properties": {
+		"Name": "Database2",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Airlines\",\"Version\":\"1.3.0\"}}}"
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://synapse@christinapardalistorage.dfs.core.windows.net/Database2",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "christinapardali-synapse-workspace-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 2,
+		"ObjectId": "a7758c68-5baa-4324-a347-617dc9f00ae4"
+	},
+	"type": "DATABASE"
+}

@@ -1,0 +1,29 @@
+{
+	"name": "relationship-qksyihmmhl",
+	"properties": {
+		"Name": "relationship-qksyihmmhl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Database1"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BudgetedIncomeStatement",
+		"ToTableName": "BudgetedIncomeRevenueItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BudgetedIncomeStatementVersionId",
+				"ToColumnName": "BudgetedIncomeStatementVersionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BudgetedIncomeStatement.cdm.json/BudgetedIncomeStatement\",\"toEntity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"joinPairs\":[{\"fromAttribute\":\"BudgetedIncomeStatementVersionId\",\"toAttribute\":\"BudgetedIncomeStatementVersionId\"}]}}"
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "8ad63b9f-cd07-4a73-ac8c-184122c7afa2"
+	},
+	"type": "RELATIONSHIP"
+}

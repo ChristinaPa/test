@@ -1,0 +1,174 @@
+{
+	"name": "BudgetedIncomeRevenueItem",
+	"properties": {
+		"Name": "BudgetedIncomeRevenueItem",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "Database2",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "BudgetedIncomeStatementId",
+					"Description": "The unique identifier of a Budgeted Income Statement.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem",
+						"Name": "BudgetedIncomeStatementId"
+					}
+				},
+				{
+					"Name": "BudgetedIncomeStatementVersionId",
+					"Description": "The unique identifier of a Budgeted Income Statement Version.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem",
+						"Name": "BudgetedIncomeStatementVersionId"
+					}
+				},
+				{
+					"Name": "RevenueItemId",
+					"Description": "The unique identifier of a revenue item.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem",
+						"Name": "RevenueItemId"
+					}
+				},
+				{
+					"Name": "BudgetedRevenueItemAmount",
+					"Description": "The budgeted amount of the associated revenue item applied to the budgeted income statement.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem",
+						"Name": "BudgetedRevenueItemAmount"
+					}
+				},
+				{
+					"Name": "ActualRevenueItemAmount",
+					"Description": "The actual amount of the associated revenue item applied to the budgeted income statement.",
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 0,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem",
+						"Name": "ActualRevenueItemAmount"
+					}
+				}
+			],
+			"ColumnSetEntityName": "2ec838f5-c73e-49e0-9203-b3f8eb15c1a1",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://synapse@christinapardalistorage.dfs.core.windows.net/Database2/BudgetedIncomeRevenueItem",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://synapse@christinapardalistorage.dfs.core.windows.net/Database2/BudgetedIncomeRevenueItem",
+				"Properties": {
+					"LinkedServiceName": "christinapardali-synapse-workspace-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BudgetedIncomeStatementId\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"BudgetedIncomeStatementId\"},\"BudgetedIncomeStatementVersionId\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"BudgetedIncomeStatementVersionId\"},\"RevenueItemId\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"RevenueItemId\"},\"BudgetedRevenueItemAmount\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"BudgetedRevenueItemAmount\"},\"ActualRevenueItemAmount\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"ActualRevenueItemAmount\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BudgetedIncomeRevenueItem\",\"path\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\"},\"description\":\"The revenue items accounted for in the budgeted income section of the budgeted income statement.\",\"primaryKey\":[\"BudgetedIncomeStatementId\",\"BudgetedIncomeStatementVersionId\",\"RevenueItemId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"BudgetedIncomeStatementId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Budgeted Income Statement.\",\"isNullable\":false,\"name\":\"BudgetedIncomeStatementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"BudgetedIncomeStatementVersionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Budgeted Income Statement Version.\",\"isNullable\":false,\"name\":\"BudgetedIncomeStatementVersionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"RevenueItemId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a revenue item.\",\"isNullable\":false,\"name\":\"RevenueItemId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"BudgetedRevenueItemAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The budgeted amount of the associated revenue item applied to the budgeted income statement.\",\"isNullable\":true,\"scale\":2,\"name\":\"BudgetedRevenueItemAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BudgetedIncomeRevenueItem.cdm.json/BudgetedIncomeRevenueItem\",\"name\":\"ActualRevenueItemAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The actual amount of the associated revenue item applied to the budgeted income statement.\",\"isNullable\":true,\"scale\":2,\"name\":\"ActualRevenueItemAmount\"}]}}}",
+			"Description": "The revenue items accounted for in the budgeted income section of the budgeted income statement.",
+			"DisplayFolderInfo": "{\"name\":\"Budget & Forecasting\",\"colorCode\":\"#00A2AD\"}",
+			"PrimaryKeys": "BudgetedIncomeStatementId,BudgetedIncomeStatementVersionId,RevenueItemId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"BudgetedIncomeStatementId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"BudgetedIncomeStatementVersionId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"RevenueItemId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"BudgetedRevenueItemAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ActualRevenueItemAmount\",\"type\":\"decimal(18,2)\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "f381143e-c45c-4dfc-8a7a-8cd809c45fa5",
+		"Description": "The revenue items accounted for in the budgeted income section of the budgeted income statement."
+	},
+	"type": "TABLE"
+}

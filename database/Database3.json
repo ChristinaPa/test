@@ -1,0 +1,25 @@
+{
+	"name": "Database3",
+	"properties": {
+		"Name": "Database3",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://synapse@christinapardalistorage.dfs.core.windows.net/Database3",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "christinapardali-synapse-workspace-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "9ec0e635-22e7-49e1-b874-ff2425c1d946"
+	},
+	"type": "DATABASE"
+}

@@ -1,5 +1,5 @@
 {
-	"name": "AutoResolveIntegrationRuntime",
+	"name": "IntegrationRuntime1",
 	"properties": {
 		"type": "Managed",
 		"typeProperties": {
@@ -8,7 +8,9 @@
 				"dataFlowProperties": {
 					"computeType": "General",
 					"coreCount": 8,
-					"timeToLive": 0
+					"timeToLive": 10,
+					"cleanup": false,
+					"customProperties": []
 				}
 			}
 		}
